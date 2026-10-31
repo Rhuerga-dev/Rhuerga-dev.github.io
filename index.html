@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Reynaldo Huerga, freelance Laravel and Flutter developer in South Florida. Web apps, admin panels, APIs and mobile apps for small businesses.">
+<title>Reynaldo Huerga — Developer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: single readable column with a wide project ledger; each project carries its real dependency line like a manifest entry */
+:root{
+  --bg:#f3f6f5; --surface:#ffffff; --ink:#13201c; --muted:#56655f; --line:#d6dfdb;
+  --accent:#0b7a63; --accent-ink:#ffffff; --amber:#b5701a; --chip:#e6efec;
+  --display:"Bricolage Grotesque", "Avenir Next", system-ui, sans-serif;
+  --body:"IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono:"IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0f1715; --surface:#16211e; --ink:#e7efec; --muted:#9db0a9; --line:#2a3834;
+  --accent:#3cc6a3; --accent-ink:#06231c; --amber:#e8a94f; --chip:#1d2b27; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0f1715; --surface:#16211e; --ink:#e7efec; --muted:#9db0a9; --line:#2a3834;
+  --accent:#3cc6a3; --accent-ink:#06231c; --amber:#e8a94f; --chip:#1d2b27; color-scheme:dark}
+
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font:400 16px/1.6 var(--body);
+  padding-left:max(16px, env(safe-area-inset-left, 0px));padding-right:max(16px, env(safe-area-inset-right, 0px))}
+.wrap{max-width:960px;margin:0 auto;padding-block:56px 72px;display:grid;gap:72px}
+a{color:var(--accent);text-underline-offset:3px}
+a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0;line-height:1.1}
+.label{font:500 12px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+
+/* Hero */
+.hero{display:grid;gap:20px}
+.status{display:inline-flex;align-items:center;gap:8px;font:500 13px/1 var(--mono);color:var(--muted)}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px color-mix(in srgb, var(--accent) 22%, transparent)}
+.hero h1{font-size:clamp(40px, 8vw, 76px);font-weight:700;letter-spacing:-.02em}
+.hero h1 span{color:var(--accent)}
+.lede{font-size:clamp(18px, 2.4vw, 21px);max-width:62ch;color:var(--ink);margin:0}
+.meta{display:flex;flex-wrap:wrap;gap:8px 20px;font:400 14px/1.4 var(--mono);color:var(--muted)}
+.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:4px}
+.btn{display:inline-flex;align-items:center;gap:8px;font:600 15px/1 var(--body);padding:13px 18px;border-radius:8px;border:1px solid var(--line);background:var(--surface);color:var(--ink);text-decoration:none;cursor:pointer}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.btn:hover{border-color:var(--accent)}
+
+/* Section heads */
+.sec{display:grid;gap:28px}
+.sec-head{display:grid;gap:8px}
+.sec-head h2{font-size:clamp(28px, 4vw, 38px);font-weight:700}
+.sec-head p{margin:0;color:var(--muted);max-width:60ch}
+
+/* Projects */
+.projects{display:grid;gap:20px}
+.project{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:28px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.35fr);gap:12px 36px}
+.project h3{font-size:28px;font-weight:700}
+.project .kind{color:var(--muted);margin:6px 0 16px;font-size:15px}
+.links{display:flex;flex-wrap:wrap;gap:8px}
+.tag{font:500 13px/1 var(--mono);padding:8px 10px;border-radius:6px;background:var(--chip);color:var(--ink);text-decoration:none;white-space:nowrap}
+a.tag{color:var(--accent)}
+a.tag:hover{text-decoration:underline}
+.tag.lock{color:var(--muted)}
+.project ul{margin:0;padding-left:18px;display:grid;gap:8px}
+.manifest{grid-column:1 / -1;margin-top:12px;padding-top:14px;border-top:1px dashed var(--line);font:400 13px/1.7 var(--mono);color:var(--muted);overflow-x:auto;white-space:nowrap}
+.manifest b{color:var(--amber);font-weight:500}
+
+/* Services */
+.services{display:grid;grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));gap:0;border-top:1px solid var(--line)}
+.service{padding:22px 24px 22px 0;border-bottom:1px solid var(--line);display:grid;gap:6px}
+.service h3{font-size:20px;font-weight:700}
+.service p{margin:0;color:var(--muted);font-size:15px}
+
+/* How I work */
+.steps{display:grid;grid-template-columns:repeat(auto-fit, minmax(200px, 1fr));gap:24px;counter-reset:s}
+.step{display:grid;gap:6px}
+.step::before{counter-increment:s;content:"0" counter(s);font:500 13px/1 var(--mono);color:var(--accent)}
+.step h3{font-size:18px;font-weight:700}
+.step p{margin:0;color:var(--muted);font-size:15px}
+
+/* Skills */
+.skills{display:grid;gap:14px}
+.skillrow{display:grid;grid-template-columns:120px minmax(0,1fr);gap:16px;align-items:baseline;padding-bottom:14px;border-bottom:1px solid var(--line)}
+.skillrow .chips{display:flex;flex-wrap:wrap;gap:6px}
+
+/* Contact */
+.contact{background:var(--ink);color:var(--bg);border-radius:14px;padding:clamp(28px, 5vw, 48px);display:grid;gap:18px}
+.contact h2{font-size:clamp(28px, 4.5vw, 42px);color:var(--bg)}
+.contact p{margin:0;max-width:56ch;opacity:.85}
+.mailrow{display:flex;flex-wrap:wrap;align-items:center;gap:12px}
+.mail{font:500 clamp(17px, 2.6vw, 22px)/1.2 var(--mono);user-select:all;word-break:break-all}
+.contact .btn{background:transparent;color:var(--bg);border-color:color-mix(in srgb, var(--bg) 40%, transparent)}
+.contact .btn:hover{border-color:var(--bg)}
+.copied{font:500 13px/1 var(--mono);opacity:.8}
+footer{font:400 13px/1.5 var(--mono);color:var(--muted)}
+
+@media (max-width: 720px){
+  .project{grid-template-columns:minmax(0,1fr);padding:22px}
+  .skillrow{grid-template-columns:minmax(0,1fr);gap:8px}
+  .wrap{gap:56px;padding-block:36px 56px}
+}
+@media (prefers-reduced-motion: no-preference){ .btn{transition:border-color .15s, background .15s} }
+</style>
+<style>html{color-scheme:light dark}body{margin:0}img{max-width:100%}</style>
+</head>
+<body>
+
+<main class="wrap">
+  <header class="hero">
+    <span class="status"><span class="dot" aria-hidden="true"></span>Available for freelance projects</span>
+    <h1>Reynaldo Huerga<br><span>Laravel developer.</span></h1>
+    <p class="lede">I build web apps, admin panels and APIs for small businesses, and the Flutter apps that connect to them. From the database to a live server.</p>
+    <div class="meta"><span>Pembroke Pines, Florida</span><span>Eastern Time</span><span>English · Español</span></div>
+    <div class="actions">
+      <a class="btn primary" href="#contact">Start a project</a>
+      <a class="btn" href="https://github.com/Rhuerga-dev" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </header>
+
+  <section class="sec" aria-labelledby="work">
+    <div class="sec-head">
+      <span class="label">Selected work</span>
+      <h2 id="work">Products I built and run</h2>
+      <p>Three of my own products, live or in active use. Two are commercial, so their code stays private; I'm happy to walk you through it on a call.</p>
+    </div>
+    <div class="projects">
+      <article class="project">
+        <div>
+          <h3>Screen Network</h3>
+          <p class="kind">Advertising platform for local businesses in Miami</p>
+          <div class="links">
+            <a class="tag" href="https://screens.getcupay.com" target="_blank" rel="noopener">screens.getcupay.com ↗</a>
+            <span class="tag lock">Private code</span>
+          </div>
+        </div>
+        <ul>
+          <li>Businesses pick city areas and dates, upload an image or video, and their ad plays on LED screens in venues and on tablets in rideshare cars.</li>
+          <li>Advertiser portal with credits, bookings, referral codes and an AI-assisted ad writer; admin panel in Filament.</li>
+          <li>Flutter player app for Android TV and tablets: activated by QR, caches media, reports every play back to the server.</li>
+          <li>English and Spanish throughout.</li>
+        </ul>
+        <div class="manifest"><b>laravel/framework</b> ^13 · <b>filament/filament</b> · php-qrcode · MySQL · <b>flutter</b> · get · video_player · geolocator</div>
+      </article>
+
+      <article class="project">
+        <div>
+          <h3>CuPay</h3>
+          <p class="kind">Digital wallet with QR payments, virtual cards and payment links</p>
+          <div class="links">
+            <a class="tag" href="https://getcupay.com" target="_blank" rel="noopener">getcupay.com ↗</a>
+            <span class="tag lock">Private code</span>
+          </div>
+        </div>
+        <ul>
+          <li>User and merchant mobile apps in Flutter: pay by scanning or showing a QR code, biometric login, push notifications.</li>
+          <li>Shared Flutter package used by both apps for support tickets, real-time updates and push registration.</li>
+          <li>Customized and extended the Laravel backend, with API authentication and Stripe checkout for shareable payment links.</li>
+        </ul>
+        <div class="manifest"><b>laravel/framework</b> ^12 · laravel/passport · Laravel Reverb · Stripe · <b>flutter</b> · local_auth · firebase_messaging</div>
+      </article>
+
+      <article class="project">
+        <div>
+          <h3>Word to Word</h3>
+          <p class="kind">Web app for learning English vocabulary every day</p>
+          <div class="links">
+            <a class="tag" href="https://github.com/Rhuerga-dev/word-to-word" target="_blank" rel="noopener">View code ↗</a>
+          </div>
+        </div>
+        <ul>
+          <li>Daily queue of new words plus spaced-repetition reviews at 1, 3, 7, 15, 30, 60 and 120 days.</li>
+          <li>REST API with token authentication and rate limits, consumed by a single-page frontend installable on iPhone.</li>
+          <li>AI-generated memory scenes and conversation practice (Claude API), and per-sound pronunciation scoring (Azure Speech).</li>
+        </ul>
+        <div class="manifest"><b>laravel/framework</b> ^13 · <b>laravel/sanctum</b> · Claude API · Azure Speech · PWA</div>
+      </article>
+    </div>
+  </section>
+
+  <section class="sec" aria-labelledby="services">
+    <div class="sec-head">
+      <span class="label">Services</span>
+      <h2 id="services">What I can do for you</h2>
+    </div>
+    <div class="services">
+      <div class="service"><h3>Custom web apps</h3><p>Booking systems, customer managers and internal tools in Laravel, built around how your business works.</p></div>
+      <div class="service"><h3>Admin panels and dashboards</h3><p>Clean panels to manage your records, with search, filters, reports and user roles.</p></div>
+      <div class="service"><h3>Bug fixes and upgrades</h3><p>I find what's broken in an existing Laravel or PHP project, fix it, and explain what happened.</p></div>
+      <div class="service"><h3>APIs and integrations</h3><p>REST APIs, payments with Stripe, maps, email, QR codes and AI features.</p></div>
+      <div class="service"><h3>Mobile apps</h3><p>Flutter apps for Android and iOS that connect to your backend.</p></div>
+      <div class="service"><h3>Deployment</h3><p>Your app online on a VPS with a domain, HTTPS and a short guide for future updates.</p></div>
+    </div>
+  </section>
+
+  <section class="sec" aria-labelledby="process">
+    <div class="sec-head">
+      <span class="label">How I work</span>
+      <h2 id="process">Clear from the first message</h2>
+    </div>
+    <div class="steps">
+      <div class="step"><h3>Scope and price</h3><p>We agree on what gets built and a fixed price before I start.</p></div>
+      <div class="step"><h3>Regular updates</h3><p>You see progress every few days and can steer early.</p></div>
+      <div class="step"><h3>Tested delivery</h3><p>I use AI tools to move fast, and I review and test everything I ship.</p></div>
+      <div class="step"><h3>You own it</h3><p>Clean, documented code that is 100% yours, plus support after delivery.</p></div>
+    </div>
+  </section>
+
+  <section class="sec" aria-labelledby="skills">
+    <div class="sec-head">
+      <span class="label">Toolkit</span>
+      <h2 id="skills">Skills</h2>
+    </div>
+    <div class="skills">
+      <div class="skillrow"><span class="label">Backend</span><div class="chips"><span class="tag">PHP</span><span class="tag">Laravel</span><span class="tag">REST APIs</span><span class="tag">Queues and jobs</span><span class="tag">Node.js</span><span class="tag">Python</span></div></div>
+      <div class="skillrow"><span class="label">Frontend</span><div class="chips"><span class="tag">Blade</span><span class="tag">Filament</span><span class="tag">Tailwind CSS</span><span class="tag">JavaScript</span><span class="tag">Angular</span></div></div>
+      <div class="skillrow"><span class="label">Mobile</span><div class="chips"><span class="tag">Flutter / Dart</span><span class="tag">GetX</span><span class="tag">Android TV</span><span class="tag">Swift</span></div></div>
+      <div class="skillrow"><span class="label">Data and ops</span><div class="chips"><span class="tag">MySQL</span><span class="tag">Git</span><span class="tag">VPS · Nginx</span><span class="tag">Cloudflare</span></div></div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact" aria-labelledby="contact-h">
+    <h2 id="contact-h">Have a project in mind?</h2>
+    <p>Tell me what you need in a few lines. I'll reply within 24 hours with a plan and an estimate.</p>
+    <div class="mailrow">
+      <span class="mail" id="mail">rhuergap@gmail.com</span>
+      <button class="btn" id="copy" type="button">Copy email</button>
+      <span class="copied" id="copied" role="status" aria-live="polite"></span>
+    </div>
+  </section>
+
+  <footer>Reynaldo Huerga · Full stack Laravel developer · Pembroke Pines, FL</footer>
+</main>
+
+<script>
+document.getElementById('copy').addEventListener('click', function(){
+  var text = document.getElementById('mail').textContent;
+  var out = document.getElementById('copied');
+  function selectIt(){
+    var r = document.createRange(); r.selectNodeContents(document.getElementById('mail'));
+    var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+    out.textContent = 'Selected. Press Cmd+C to copy';
+  }
+  try{
+    navigator.clipboard.writeText(text).then(function(){ out.textContent = 'Copied'; }, selectIt);
+  }catch(e){ selectIt(); }
+});
+</script>
+
+</body>
+</html>
