@@ -61,6 +61,7 @@ h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0;line-height:1.1}
 .tag{font:500 13px/1 var(--mono);padding:8px 10px;border-radius:6px;background:var(--chip);color:var(--ink);text-decoration:none;white-space:nowrap}
 a.tag{color:var(--accent)}
 a.tag:hover{text-decoration:underline}
+a.tag.demo{background:var(--accent);color:#fff}
 .tag.lock{color:var(--muted)}
 .project ul{margin:0;padding-left:18px;display:grid;gap:8px}
 .manifest{grid-column:1 / -1;margin-top:12px;padding-top:14px;border-top:1px dashed var(--line);font:400 13px/1.7 var(--mono);color:var(--muted);overflow-x:auto;white-space:nowrap}
@@ -134,7 +135,7 @@ footer{font:400 13px/1.5 var(--mono);color:var(--muted)}
     <div class="sec-head">
       <span class="label" data-i18n="t4">Selected work</span>
       <h2 id="work" data-i18n="t5">Products I built and run</h2>
-      <p data-i18n="t6">Three of my own products, live or in active use. Two are commercial, so their code stays private; I'm happy to walk you through it on a call.</p>
+      <p data-i18n="t6">Four of my own products, live or in active use. Three are commercial, so their code stays private; I'm happy to walk you through it on a call.</p>
     </div>
     <div class="projects">
       <article class="project">
@@ -143,6 +144,7 @@ footer{font:400 13px/1.5 var(--mono);color:var(--muted)}
           <p class="kind" data-i18n="t7">Advertising platform for local businesses in Miami</p>
           <div class="links">
             <a class="tag" href="https://screens.huergalabs.dev" target="_blank" rel="noopener">screens.huergalabs.dev ↗</a>
+            <a class="tag demo" href="https://screens.huergalabs.dev/demo" target="_blank" rel="noopener" data-i18n="demo">Try the demo ↗</a>
             <span class="tag lock" data-i18n="t8">Private code</span>
           </div>
         </div>
@@ -157,10 +159,30 @@ footer{font:400 13px/1.5 var(--mono);color:var(--muted)}
 
       <article class="project">
         <div>
+          <h3>DSPBoard</h3>
+          <p class="kind" data-i18n="d0">Operations app for Amazon delivery companies (DSPs)</p>
+          <div class="links">
+            <a class="tag" href="https://dspboard.huergalabs.dev" target="_blank" rel="noopener">dspboard.huergalabs.dev ↗</a>
+            <a class="tag demo" href="https://dspboard.huergalabs.dev/demo" target="_blank" rel="noopener" data-i18n="demo">Try the demo ↗</a>
+            <span class="tag lock" data-i18n="t8">Private code</span>
+          </div>
+        </div>
+        <ul>
+          <li data-i18n="d1">Daily board that reads the day's Amazon route sheet (PDF) and assigns drivers, vans and helpers; each list only offers who can take that route: on the schedule, under 40 hours, trained for step vans or EDVs, valid license.</li>
+          <li data-i18n="d2">Weekly schedule like When I Work, extra drivers on standby or VTO, fleet maintenance and van-shortage alerts, and a mobile driver app with van inspections.</li>
+          <li data-i18n="d3">Weekly scorecard with per-driver coaching messages, plus ADP hours reconciliation and bonus export.</li>
+          <li data-i18n="d4">Multi-company SaaS: super admin panel with paid modules per company, and a public demo where every visitor gets a private copy of the data.</li>
+        </ul>
+        <div class="manifest"><b>laravel/framework</b> ^13 · SQLite · poppler (pdftotext) · Claude API · multi-tenant · PHPUnit</div>
+      </article>
+
+      <article class="project">
+        <div>
           <h3>CuPay</h3>
           <p class="kind" data-i18n="t13">Digital wallet with QR payments, virtual cards and payment links</p>
           <div class="links">
             <a class="tag" href="https://qrpay.huergalabs.dev" target="_blank" rel="noopener">qrpay.huergalabs.dev ↗</a>
+            <a class="tag demo" href="https://qrpay.huergalabs.dev/demo" target="_blank" rel="noopener" data-i18n="demo">Try the demo ↗</a>
             <span class="tag lock" data-i18n="t8">Private code</span>
           </div>
         </div>
@@ -177,6 +199,7 @@ footer{font:400 13px/1.5 var(--mono);color:var(--muted)}
           <h3>Word to Word</h3>
           <p class="kind" data-i18n="t17">Web app for learning English vocabulary every day</p>
           <div class="links">
+            <a class="tag demo" href="https://w2w.huergalabs.dev/app/?demo=1" target="_blank" rel="noopener" data-i18n="demo">Try the demo ↗</a>
             <a class="tag" href="https://github.com/Rhuerga-dev/word-to-word" target="_blank" rel="noopener" data-i18n="t18">View code ↗</a>
           </div>
         </div>
@@ -259,7 +282,7 @@ document.getElementById('copy').addEventListener('click', function(){
 });
 
 // ===== Idioma =====
-var I18N = { en: {"t0": "Laravel developer.", "t1": "I build web apps, admin panels and APIs for small businesses, and the Flutter apps that connect to them. From the database to a live server.", "t2": "Eastern Time", "t3": "Start a project", "t4": "Selected work", "t5": "Products I built and run", "t6": "Three of my own products, live or in active use. Two are commercial, so their code stays private; I'm happy to walk you through it on a call.", "t7": "Advertising platform for local businesses in Miami", "t8": "Private code", "t9": "Businesses pick city areas and dates, upload an image or video, and their ad plays on LED screens in venues and on tablets in rideshare cars.", "t10": "Advertiser portal with credits, bookings, referral codes and an AI-assisted ad writer; admin panel in Filament.", "t11": "Flutter player app for Android TV and tablets: activated by QR, caches media, reports every play back to the server.", "t12": "English and Spanish throughout.", "t13": "Digital wallet with QR payments, virtual cards and payment links", "t14": "User and merchant mobile apps in Flutter: pay by scanning or showing a QR code, biometric login, push notifications.", "t15": "Shared Flutter package used by both apps for support tickets, real-time updates and push registration.", "t16": "Customized and extended the Laravel backend, with API authentication and Stripe checkout for shareable payment links.", "t17": "Web app for learning English vocabulary every day", "t18": "View code ↗", "t19": "Daily queue of new words plus spaced-repetition reviews at 1, 3, 7, 15, 30, 60 and 120 days.", "t20": "REST API with token authentication and rate limits, consumed by a single-page frontend installable on iPhone.", "t21": "AI-generated memory scenes and conversation practice (Claude API), and per-sound pronunciation scoring (Azure Speech).", "t22": "Services", "t23": "What I can do for you", "t24": "Custom web apps", "t25": "Booking systems, customer managers and internal tools in Laravel, built around how your business works.", "t26": "Admin panels and dashboards", "t27": "Clean panels to manage your records, with search, filters, reports and user roles.", "t28": "Bug fixes and upgrades", "t29": "I find what's broken in an existing Laravel or PHP project, fix it, and explain what happened.", "t30": "APIs and integrations", "t31": "REST APIs, payments with Stripe, maps, email, QR codes and AI features.", "t32": "Mobile apps", "t33": "Flutter apps for Android and iOS that connect to your backend.", "t34": "Deployment", "t35": "Your app online on a VPS with a domain, HTTPS and a short guide for future updates.", "t36": "How I work", "t37": "Clear from the first message", "t38": "Scope and price", "t39": "We agree on what gets built and a fixed price before I start.", "t40": "Regular updates", "t41": "You see progress every few days and can steer early.", "t42": "Tested delivery", "t43": "I use AI tools to move fast, and I review and test everything I ship.", "t44": "You own it", "t45": "Clean, documented code that is 100% yours, plus support after delivery.", "t46": "Toolkit", "t47": "Skills", "t48": "Queues and jobs", "t49": "Mobile", "t50": "Data and ops", "t51": "Have a project in mind?", "t52": "Tell me what you need in a few lines. I'll reply within 24 hours with a plan and an estimate.", "t53": "Copy email", "t54": "Reynaldo Huerga · Full stack Laravel developer · Pembroke Pines, FL", "status": "Available for freelance projects"}, es: {"t0": "Desarrollador Laravel.", "t1": "Creo aplicaciones web, paneles de administración y APIs para pequeños negocios, y las apps en Flutter que se conectan a ellos. Desde la base de datos hasta el servidor en producción.", "t2": "Hora del Este (EE. UU.)", "t3": "Empezar un proyecto", "t4": "Proyectos", "t5": "Productos que construí y mantengo", "t6": "Tres productos propios, en línea o en uso. Dos son comerciales, así que su código es privado; con gusto te lo muestro en una llamada.", "t7": "Plataforma de publicidad para negocios locales en Miami", "t8": "Código privado", "t9": "Los negocios eligen zonas de la ciudad y fechas, suben una imagen o video, y su anuncio se muestra en pantallas LED de locales y en tablets de autos de Uber y Lyft.", "t10": "Portal para anunciantes con créditos, reservas, códigos de referido y redacción de anuncios con IA; panel de administración en Filament.", "t11": "App reproductora en Flutter para Android TV y tablets: se activa con un código QR, guarda los videos en caché y reporta cada reproducción al servidor.", "t12": "Toda la plataforma en inglés y español.", "t13": "Billetera digital con pagos por QR, tarjetas virtuales y enlaces de pago", "t14": "Apps móviles para usuarios y comercios en Flutter: pagos escaneando o mostrando un código QR, acceso biométrico y notificaciones push.", "t15": "Paquete Flutter compartido por ambas apps para tickets de soporte, actualizaciones en tiempo real y registro de notificaciones.", "t16": "Personalicé y amplié el backend en Laravel, con autenticación de API y pagos con Stripe para enlaces de pago compartibles.", "t17": "App web para aprender vocabulario en inglés cada día", "t18": "Ver código ↗", "t19": "Palabras nuevas cada día y repasos espaciados a 1, 3, 7, 15, 30, 60 y 120 días.", "t20": "API REST con autenticación por token y límites de uso, consumida por una app de una sola página instalable en el iPhone.", "t21": "Escenas para memorizar y práctica de conversación con IA (API de Claude), y evaluación de pronunciación por sonido (Azure Speech).", "t22": "Servicios", "t23": "Qué puedo hacer por ti", "t24": "Aplicaciones web a medida", "t25": "Sistemas de reservas, gestión de clientes y herramientas internas en Laravel, hechos a la medida de cómo trabaja tu negocio.", "t26": "Paneles de administración", "t27": "Paneles claros para gestionar tus datos, con búsqueda, filtros, reportes y roles de usuario.", "t28": "Corrección de errores y actualizaciones", "t29": "Encuentro lo que falla en un proyecto Laravel o PHP existente, lo arreglo y te explico qué pasó.", "t30": "APIs e integraciones", "t31": "APIs REST, pagos con Stripe, mapas, correo, códigos QR y funciones con IA.", "t32": "Apps móviles", "t33": "Apps en Flutter para Android e iOS conectadas a tu backend.", "t34": "Puesta en producción", "t35": "Tu app en línea en un VPS, con dominio, HTTPS y una guía corta para futuras actualizaciones.", "t36": "Cómo trabajo", "t37": "Claridad desde el primer mensaje", "t38": "Alcance y precio", "t39": "Antes de empezar acordamos qué se construye y un precio fijo.", "t40": "Avances frecuentes", "t41": "Ves el progreso cada pocos días y puedes ajustar el rumbo a tiempo.", "t42": "Entrega probada", "t43": "Uso herramientas de IA para avanzar rápido, y reviso y pruebo todo lo que entrego.", "t44": "El código es tuyo", "t45": "Código limpio y documentado, 100% tuyo, con soporte después de la entrega.", "t46": "Herramientas", "t47": "Habilidades", "t48": "Colas y tareas", "t49": "Móvil", "t50": "Datos e infraestructura", "t51": "¿Tienes un proyecto en mente?", "t52": "Cuéntame en pocas líneas qué necesitas. Te respondo en menos de 24 horas con un plan y un presupuesto.", "t53": "Copiar correo", "t54": "Reynaldo Huerga · Desarrollador full stack Laravel · Pembroke Pines, FL", "status": "Disponible para proyectos freelance"} };
+var I18N = { en: {"t0": "Laravel developer.", "t1": "I build web apps, admin panels and APIs for small businesses, and the Flutter apps that connect to them. From the database to a live server.", "t2": "Eastern Time", "t3": "Start a project", "t4": "Selected work", "t5": "Products I built and run", "t6": "Four of my own products, live or in active use. Three are commercial, so their code stays private; I'm happy to walk you through it on a call.", "t7": "Advertising platform for local businesses in Miami", "t8": "Private code", "t9": "Businesses pick city areas and dates, upload an image or video, and their ad plays on LED screens in venues and on tablets in rideshare cars.", "t10": "Advertiser portal with credits, bookings, referral codes and an AI-assisted ad writer; admin panel in Filament.", "t11": "Flutter player app for Android TV and tablets: activated by QR, caches media, reports every play back to the server.", "t12": "English and Spanish throughout.", "t13": "Digital wallet with QR payments, virtual cards and payment links", "t14": "User and merchant mobile apps in Flutter: pay by scanning or showing a QR code, biometric login, push notifications.", "t15": "Shared Flutter package used by both apps for support tickets, real-time updates and push registration.", "t16": "Customized and extended the Laravel backend, with API authentication and Stripe checkout for shareable payment links.", "t17": "Web app for learning English vocabulary every day", "t18": "View code ↗", "t19": "Daily queue of new words plus spaced-repetition reviews at 1, 3, 7, 15, 30, 60 and 120 days.", "t20": "REST API with token authentication and rate limits, consumed by a single-page frontend installable on iPhone.", "t21": "AI-generated memory scenes and conversation practice (Claude API), and per-sound pronunciation scoring (Azure Speech).", "t22": "Services", "t23": "What I can do for you", "t24": "Custom web apps", "t25": "Booking systems, customer managers and internal tools in Laravel, built around how your business works.", "t26": "Admin panels and dashboards", "t27": "Clean panels to manage your records, with search, filters, reports and user roles.", "t28": "Bug fixes and upgrades", "t29": "I find what's broken in an existing Laravel or PHP project, fix it, and explain what happened.", "t30": "APIs and integrations", "t31": "REST APIs, payments with Stripe, maps, email, QR codes and AI features.", "t32": "Mobile apps", "t33": "Flutter apps for Android and iOS that connect to your backend.", "t34": "Deployment", "t35": "Your app online on a VPS with a domain, HTTPS and a short guide for future updates.", "t36": "How I work", "t37": "Clear from the first message", "t38": "Scope and price", "t39": "We agree on what gets built and a fixed price before I start.", "t40": "Regular updates", "t41": "You see progress every few days and can steer early.", "t42": "Tested delivery", "t43": "I use AI tools to move fast, and I review and test everything I ship.", "t44": "You own it", "t45": "Clean, documented code that is 100% yours, plus support after delivery.", "t46": "Toolkit", "t47": "Skills", "t48": "Queues and jobs", "t49": "Mobile", "t50": "Data and ops", "t51": "Have a project in mind?", "t52": "Tell me what you need in a few lines. I'll reply within 24 hours with a plan and an estimate.", "t53": "Copy email", "t54": "Reynaldo Huerga · Full stack Laravel developer · Pembroke Pines, FL", "status": "Available for freelance projects", "demo": "Try the demo ↗", "d0": "Operations app for Amazon delivery companies (DSPs)", "d1": "Daily board that reads the day's Amazon route sheet (PDF) and assigns drivers, vans and helpers; each list only offers who can take that route: on the schedule, under 40 hours, trained for step vans or EDVs, valid license.", "d2": "Weekly schedule like When I Work, extra drivers on standby or VTO, fleet maintenance and van-shortage alerts, and a mobile driver app with van inspections.", "d3": "Weekly scorecard with per-driver coaching messages, plus ADP hours reconciliation and bonus export.", "d4": "Multi-company SaaS: super admin panel with paid modules per company, and a public demo where every visitor gets a private copy of the data."}, es: {"t0": "Desarrollador Laravel.", "t1": "Creo aplicaciones web, paneles de administración y APIs para pequeños negocios, y las apps en Flutter que se conectan a ellos. Desde la base de datos hasta el servidor en producción.", "t2": "Hora del Este (EE. UU.)", "t3": "Empezar un proyecto", "t4": "Proyectos", "t5": "Productos que construí y mantengo", "t6": "Cuatro productos propios, en línea o en uso. Tres son comerciales, así que su código es privado; con gusto te lo muestro en una llamada.", "t7": "Plataforma de publicidad para negocios locales en Miami", "t8": "Código privado", "t9": "Los negocios eligen zonas de la ciudad y fechas, suben una imagen o video, y su anuncio se muestra en pantallas LED de locales y en tablets de autos de Uber y Lyft.", "t10": "Portal para anunciantes con créditos, reservas, códigos de referido y redacción de anuncios con IA; panel de administración en Filament.", "t11": "App reproductora en Flutter para Android TV y tablets: se activa con un código QR, guarda los videos en caché y reporta cada reproducción al servidor.", "t12": "Toda la plataforma en inglés y español.", "t13": "Billetera digital con pagos por QR, tarjetas virtuales y enlaces de pago", "t14": "Apps móviles para usuarios y comercios en Flutter: pagos escaneando o mostrando un código QR, acceso biométrico y notificaciones push.", "t15": "Paquete Flutter compartido por ambas apps para tickets de soporte, actualizaciones en tiempo real y registro de notificaciones.", "t16": "Personalicé y amplié el backend en Laravel, con autenticación de API y pagos con Stripe para enlaces de pago compartibles.", "t17": "App web para aprender vocabulario en inglés cada día", "t18": "Ver código ↗", "t19": "Palabras nuevas cada día y repasos espaciados a 1, 3, 7, 15, 30, 60 y 120 días.", "t20": "API REST con autenticación por token y límites de uso, consumida por una app de una sola página instalable en el iPhone.", "t21": "Escenas para memorizar y práctica de conversación con IA (API de Claude), y evaluación de pronunciación por sonido (Azure Speech).", "t22": "Servicios", "t23": "Qué puedo hacer por ti", "t24": "Aplicaciones web a medida", "t25": "Sistemas de reservas, gestión de clientes y herramientas internas en Laravel, hechos a la medida de cómo trabaja tu negocio.", "t26": "Paneles de administración", "t27": "Paneles claros para gestionar tus datos, con búsqueda, filtros, reportes y roles de usuario.", "t28": "Corrección de errores y actualizaciones", "t29": "Encuentro lo que falla en un proyecto Laravel o PHP existente, lo arreglo y te explico qué pasó.", "t30": "APIs e integraciones", "t31": "APIs REST, pagos con Stripe, mapas, correo, códigos QR y funciones con IA.", "t32": "Apps móviles", "t33": "Apps en Flutter para Android e iOS conectadas a tu backend.", "t34": "Puesta en producción", "t35": "Tu app en línea en un VPS, con dominio, HTTPS y una guía corta para futuras actualizaciones.", "t36": "Cómo trabajo", "t37": "Claridad desde el primer mensaje", "t38": "Alcance y precio", "t39": "Antes de empezar acordamos qué se construye y un precio fijo.", "t40": "Avances frecuentes", "t41": "Ves el progreso cada pocos días y puedes ajustar el rumbo a tiempo.", "t42": "Entrega probada", "t43": "Uso herramientas de IA para avanzar rápido, y reviso y pruebo todo lo que entrego.", "t44": "El código es tuyo", "t45": "Código limpio y documentado, 100% tuyo, con soporte después de la entrega.", "t46": "Herramientas", "t47": "Habilidades", "t48": "Colas y tareas", "t49": "Móvil", "t50": "Datos e infraestructura", "t51": "¿Tienes un proyecto en mente?", "t52": "Cuéntame en pocas líneas qué necesitas. Te respondo en menos de 24 horas con un plan y un presupuesto.", "t53": "Copiar correo", "t54": "Reynaldo Huerga · Desarrollador full stack Laravel · Pembroke Pines, FL", "status": "Disponible para proyectos freelance", "demo": "Probar demo ↗", "d0": "App de operaciones para empresas de reparto de Amazon (DSP)", "d1": "Tablero del día que lee la hoja de rutas de Amazon (PDF) y asigna choferes, vans y helpers; cada lista solo ofrece a quien puede tomar esa ruta: en el horario, debajo de 40 horas, con entrenamiento de step van o EDV y licencia vigente.", "d2": "Horario semanal tipo When I Work, gente de extra en standby o VTO, mantenimiento de la flota con aviso de vans faltantes, y app del chofer con inspección de la van.", "d3": "Scorecard semanal con mensajes de coaching por chofer, más conciliación de horas con ADP y exportación de bonos.", "d4": "SaaS para varias empresas: panel de superadmin con módulos de pago por empresa, y demo pública donde cada visitante trabaja en su propia copia de los datos."} };
 var META = {
   en: { title: document.title, desc: document.getElementById('metaDesc').getAttribute('content'), copied: 'Copied', select: 'Selected. Press Cmd+C to copy' },
   es: { title: "Reynaldo Huerga — Desarrollador", desc: "Reynaldo Huerga, desarrollador freelance Laravel y Flutter en el sur de Florida. Aplicaciones web, paneles de administración, APIs y apps móviles para pequeños negocios.", copied: 'Copiado', select: 'Seleccionado. Pulsa Cmd+C para copiar' }
@@ -277,6 +300,7 @@ function setLang(lang, save) {
   document.querySelectorAll('.lang [data-lang]').forEach(function (b) { b.setAttribute('aria-pressed', b.getAttribute('data-lang') === lang ? 'true' : 'false'); });
   document.getElementById('copied').textContent = '';
   if (save) { try { localStorage.setItem('lang', lang); } catch (e) {} }
+  renderProjects();
 }
 document.querySelectorAll('.lang [data-lang]').forEach(function (b) {
   b.addEventListener('click', function () { setLang(b.getAttribute('data-lang'), true); });
@@ -287,6 +311,56 @@ document.querySelectorAll('.lang [data-lang]').forEach(function (b) {
   var browser = (navigator.language || 'en').toLowerCase().indexOf('es') === 0 ? 'es' : 'en';
   setLang(fromUrl || saved || browser, !!fromUrl);
 })();
+
+/* Proyectos: se cargan de projects.json (lo publica el panel admin.huergalabs.dev).
+   Si el archivo no existe o falla, se quedan los proyectos escritos arriba. */
+var PROJECTS = null;
+function el(tag, cls, text) { var e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; }
+function renderProjects() {
+  if (!PROJECTS || !PROJECTS.length) return;
+  var box = document.querySelector('.projects'); if (!box) return;
+  var lang = currentLang, t = I18N[lang] || I18N.en;
+  box.innerHTML = '';
+  PROJECTS.forEach(function (p) {
+    var art = el('article', 'project'), head = el('div');
+    head.appendChild(el('h3', null, p.name));
+    head.appendChild(el('p', 'kind', (p.kind && (p.kind[lang] || p.kind.en)) || ''));
+    var links = el('div', 'links');
+    if (p.live_url) {
+      var a = el('a', 'tag', p.live_url.replace(/^https?:\/\//, '').replace(/\/$/, '') + ' ↗');
+      a.href = p.live_url; a.target = '_blank'; a.rel = 'noopener'; links.appendChild(a);
+    }
+    if (p.demo_url) {
+      var dm = el('a', 'tag demo', t.demo); dm.href = p.demo_url; dm.target = '_blank'; dm.rel = 'noopener'; links.appendChild(dm);
+    }
+    if (p.code_url) {
+      var c = el('a', 'tag', t.t18); c.href = p.code_url; c.target = '_blank'; c.rel = 'noopener'; links.appendChild(c);
+    } else if (p.private_code) {
+      links.appendChild(el('span', 'tag lock', t.t8));
+    }
+    head.appendChild(links);
+    art.appendChild(head);
+    var ul = el('ul');
+    ((p.bullets && (p.bullets[lang] && p.bullets[lang].length ? p.bullets[lang] : p.bullets.en)) || []).forEach(function (b) { ul.appendChild(el('li', null, b)); });
+    art.appendChild(ul);
+    if (p.stack) {
+      var m = el('div', 'manifest');
+      p.stack.split(' · ').forEach(function (part, i) {
+        if (i) m.appendChild(document.createTextNode(' · '));
+        var bold = /^(laravel\/framework|flutter|filament\/filament|laravel\/sanctum)\b/.test(part);
+        var name = part.split(' ')[0], rest = part.slice(name.length);
+        if (bold) { m.appendChild(el('b', null, name)); m.appendChild(document.createTextNode(rest)); }
+        else m.appendChild(document.createTextNode(part));
+      });
+      art.appendChild(m);
+    }
+    box.appendChild(art);
+  });
+}
+fetch('projects.json', { cache: 'no-cache' })
+  .then(function (r) { return r.ok ? r.json() : null; })
+  .then(function (d) { if (d && d.projects) { PROJECTS = d.projects; renderProjects(); } })
+  .catch(function () {});
 </script>
 
 </body>

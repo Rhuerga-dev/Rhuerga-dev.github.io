@@ -1,0 +1,108 @@
+{
+    "projects": [
+        {
+            "name": "Screen Network",
+            "slug": "screen-network",
+            "kind": {
+                "en": "Advertising platform for local businesses in Miami",
+                "es": "Plataforma de publicidad para negocios locales en Miami"
+            },
+            "bullets": {
+                "en": [
+                    "Businesses pick city areas and dates, upload an image or video, and their ad plays on LED screens in venues and on tablets in rideshare cars.",
+                    "Advertiser portal with credits, bookings, referral codes and an AI-assisted ad writer; admin panel in Filament.",
+                    "Flutter player app for Android TV and tablets: activated by QR, caches media, reports every play back to the server.",
+                    "English and Spanish throughout."
+                ],
+                "es": [
+                    "Los negocios eligen zonas de la ciudad y fechas, suben una imagen o video, y su anuncio se muestra en pantallas LED de locales y en tablets de autos de Uber y Lyft.",
+                    "Portal para anunciantes con créditos, reservas, códigos de referido y redacción de anuncios con IA; panel de administración en Filament.",
+                    "App reproductora en Flutter para Android TV y tablets: se activa con un código QR, guarda los videos en caché y reporta cada reproducción al servidor.",
+                    "Toda la plataforma en inglés y español."
+                ]
+            },
+            "live_url": "https://screens.huergalabs.dev",
+            "demo_url": "https://screens.huergalabs.dev/demo",
+            "code_url": null,
+            "private_code": true,
+            "stack": "laravel/framework ^13 · filament/filament · php-qrcode · MySQL · flutter · get · video_player · geolocator"
+        },
+        {
+            "name": "DSPBoard",
+            "slug": "dspboard",
+            "kind": {
+                "en": "Operations app for Amazon delivery companies (DSPs)",
+                "es": "App de operaciones para empresas de reparto de Amazon (DSP)"
+            },
+            "bullets": {
+                "en": [
+                    "Daily board that reads the day's Amazon route sheet (PDF) and assigns drivers, vans and helpers; each list only offers who can take that route: on the schedule, under 40 hours, trained for step vans or EDVs, valid license.",
+                    "Weekly schedule like When I Work, extra drivers on standby or VTO, fleet maintenance and van-shortage alerts, and a mobile driver app with van inspections.",
+                    "Weekly scorecard with per-driver coaching messages, plus ADP hours reconciliation and bonus export.",
+                    "Multi-company SaaS: super admin panel with paid modules per company, and a public demo where every visitor gets a private copy of the data."
+                ],
+                "es": [
+                    "Tablero del día que lee la hoja de rutas de Amazon (PDF) y asigna choferes, vans y helpers; cada lista solo ofrece a quien puede tomar esa ruta: en el horario, debajo de 40 horas, con entrenamiento de step van o EDV y licencia vigente.",
+                    "Horario semanal tipo When I Work, gente de extra en standby o VTO, mantenimiento de la flota con aviso de vans faltantes, y app del chofer con inspección de la van.",
+                    "Scorecard semanal con mensajes de coaching por chofer, más conciliación de horas con ADP y exportación de bonos.",
+                    "SaaS para varias empresas: panel de superadmin con módulos de pago por empresa, y demo pública donde cada visitante trabaja en su propia copia de los datos."
+                ]
+            },
+            "live_url": "https://dspboard.huergalabs.dev",
+            "demo_url": "https://dspboard.huergalabs.dev/demo",
+            "code_url": null,
+            "private_code": true,
+            "stack": "laravel/framework ^13 · SQLite · poppler (pdftotext) · Claude API · multi-tenant · PHPUnit"
+        },
+        {
+            "name": "CuPay",
+            "slug": "cupay",
+            "kind": {
+                "en": "Digital wallet with QR payments, virtual cards and payment links",
+                "es": "Billetera digital con pagos por QR, tarjetas virtuales y enlaces de pago"
+            },
+            "bullets": {
+                "en": [
+                    "User and merchant mobile apps in Flutter: pay by scanning or showing a QR code, biometric login, push notifications.",
+                    "Shared Flutter package used by both apps for support tickets, real-time updates and push registration.",
+                    "Customized and extended the Laravel backend, with API authentication and Stripe checkout for shareable payment links."
+                ],
+                "es": [
+                    "Apps móviles para usuarios y comercios en Flutter: pagos escaneando o mostrando un código QR, acceso biométrico y notificaciones push.",
+                    "Paquete Flutter compartido por ambas apps para tickets de soporte, actualizaciones en tiempo real y registro de notificaciones.",
+                    "Personalicé y amplié el backend en Laravel, con autenticación de API y pagos con Stripe para enlaces de pago compartibles."
+                ]
+            },
+            "live_url": "https://qrpay.huergalabs.dev",
+            "demo_url": "https://qrpay.huergalabs.dev/demo",
+            "code_url": null,
+            "private_code": true,
+            "stack": "laravel/framework ^12 · laravel/passport · Laravel Reverb · Stripe · flutter · local_auth · firebase_messaging"
+        },
+        {
+            "name": "Word to Word",
+            "slug": "word-to-word",
+            "kind": {
+                "en": "Web app for learning English from beginner to fluent",
+                "es": "App web para aprender inglés de básico a fluido"
+            },
+            "bullets": {
+                "en": [
+                    "CEFR learning path (A1 to C1) with a placement test, words grouped by level and a level-up exam.",
+                    "Spaced-repetition reviews, AI memory scenes and conversation practice (Claude API), and per-sound pronunciation scoring.",
+                    "Hands-free voice mode, swipe gestures and daily push reminders; installable on iPhone."
+                ],
+                "es": [
+                    "Camino por niveles MCER (A1 a C1) con prueba de nivel, palabras por nivel y examen para subir.",
+                    "Repasos espaciados, escenas para memorizar y conversación con IA (API de Claude), y evaluación de pronunciación por sonido.",
+                    "Modo manos libres por voz, gestos para calificar y recordatorios push diarios; instalable en el iPhone."
+                ]
+            },
+            "live_url": "https://w2w.huergalabs.dev/app/",
+            "demo_url": "https://w2w.huergalabs.dev/app/?demo=1",
+            "code_url": "https://github.com/Rhuerga-dev/word-to-word",
+            "private_code": false,
+            "stack": "laravel/framework ^13 · laravel/sanctum · Claude API · Azure Speech · Web Push · PWA"
+        }
+    ]
+}
