@@ -21,8 +21,8 @@
                     "Toda la plataforma en inglés y español."
                 ]
             },
-            "live_url": "https://screens.huergalabs.dev",
-            "demo_url": "https://screens.huergalabs.dev/demo",
+            "live_url": "https://adsnet.tv",
+            "demo_url": "https://adsnet.tv/demo",
             "code_url": null,
             "private_code": true,
             "stack": "laravel/framework ^13 · filament/filament · php-qrcode · MySQL · flutter · get · video_player · geolocator"
