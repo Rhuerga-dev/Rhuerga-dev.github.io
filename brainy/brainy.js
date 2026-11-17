@@ -431,9 +431,9 @@
 
     // Todo el texto entra con textContent (nunca como HTML): lo que venga en el JSON no puede inyectar nada.
     function renderPanel() {
-        if (!pathEl) return;
-        pathEl.textContent = '';
-        data.phases.forEach((p, i) => {
+        // La página pública muestra solo el cerebro: si no hay lista de fases en el HTML, no se arma.
+        if (pathEl) pathEl.textContent = '';
+        if (pathEl) data.phases.forEach((p, i) => {
             const box = make('div', 'phase');
             const head = make('div', 't');
             const dot = make('i'); dot.style.background = COLORS[i % PHASES];
