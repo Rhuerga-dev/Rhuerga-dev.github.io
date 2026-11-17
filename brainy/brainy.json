@@ -1,0 +1,173 @@
+{
+    "version": 1,
+    "progress": 0,
+    "done": 0,
+    "total": 20,
+    "phases": [
+        {
+            "id": 1,
+            "name": "Python + PyTorch",
+            "progress": 0,
+            "milestones": [
+                {
+                    "id": "f1_numpy",
+                    "name": "NumPy: números en bloque",
+                    "done": false,
+                    "date": null
+                },
+                {
+                    "id": "f1_tensores",
+                    "name": "Tensores, GPU y autograd",
+                    "done": false,
+                    "date": null
+                },
+                {
+                    "id": "f1_mnist",
+                    "name": "Primera red: dígitos MNIST",
+                    "done": false,
+                    "date": null
+                },
+                {
+                    "id": "f1_ejercicios",
+                    "name": "Ejercicios de la fase 1",
+                    "done": false,
+                    "date": null
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "name": "Cómo aprende una red",
+            "progress": 0,
+            "milestones": [
+                {
+                    "id": "f2_micrograd",
+                    "name": "micrograd: gradientes a mano",
+                    "done": false,
+                    "date": null
+                },
+                {
+                    "id": "f2_bigramas",
+                    "name": "makemore: bigramas",
+                    "done": false,
+                    "date": null
+                },
+                {
+                    "id": "f2_mlp",
+                    "name": "makemore: red MLP",
+                    "done": false,
+                    "date": null
+                },
+                {
+                    "id": "f2_nombres",
+                    "name": "Generador de nombres propio",
+                    "done": false,
+                    "date": null
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "name": "Mini-GPT",
+            "progress": 0,
+            "milestones": [
+                {
+                    "id": "f3_tokenizador",
+                    "name": "Tokenizador BPE",
+                    "done": false,
+                    "date": null
+                },
+                {
+                    "id": "f3_atencion",
+                    "name": "Self-attention",
+                    "done": false,
+                    "date": null
+                },
+                {
+                    "id": "f3_transformer",
+                    "name": "Bloques transformer",
+                    "done": false,
+                    "date": null
+                },
+                {
+                    "id": "f3_gpt",
+                    "name": "Mini-GPT entrenado en español",
+                    "done": false,
+                    "date": null
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "name": "Modelo útil",
+            "progress": 0,
+            "milestones": [
+                {
+                    "id": "f4_dataset",
+                    "name": "Dataset de logs de W2W",
+                    "done": false,
+                    "date": null
+                },
+                {
+                    "id": "f4_clasificador",
+                    "name": "Clasificador entrenado",
+                    "done": false,
+                    "date": null
+                },
+                {
+                    "id": "f4_panel",
+                    "name": "Conectado al panel",
+                    "done": false,
+                    "date": null
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "name": "Cerebro completo",
+            "progress": 0,
+            "milestones": [
+                {
+                    "id": "f5_memoria",
+                    "name": "Memoria semántica (pgvector)",
+                    "done": false,
+                    "date": null
+                },
+                {
+                    "id": "f5_ollama",
+                    "name": "Modelo local con Ollama",
+                    "done": false,
+                    "date": null
+                },
+                {
+                    "id": "f5_router",
+                    "name": "Router de decisiones",
+                    "done": false,
+                    "date": null
+                },
+                {
+                    "id": "f5_claude",
+                    "name": "Escalado a Claude",
+                    "done": false,
+                    "date": null
+                },
+                {
+                    "id": "f5_mcp",
+                    "name": "API + servidor MCP",
+                    "done": false,
+                    "date": null
+                }
+            ]
+        }
+    ],
+    "history": [
+        {
+            "date": "2026-11-17",
+            "milestone": null,
+            "progress": 0
+        }
+    ],
+    "metrics": {
+        "mnist_precision": []
+    }
+}
