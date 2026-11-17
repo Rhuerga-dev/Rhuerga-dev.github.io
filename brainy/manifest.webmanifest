@@ -3,7 +3,8 @@
   "short_name": "Brainy",
   "start_url": "/brainy/",
   "scope": "/brainy/",
-  "display": "fullscreen",
+  "display": "standalone",
+  "display_override": ["fullscreen", "standalone"],
   "background_color": "#0a1210",
   "theme_color": "#0a1210",
   "icons": [
