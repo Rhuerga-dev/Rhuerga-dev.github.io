@@ -359,7 +359,7 @@
 
     const T = {
         en: {
-            back: '← Huerga Labs', by: 'by Huerga Labs',
+            back: '← Huerga Labs', by: 'by Huerga Labs', fs: 'Full screen', fsExit: 'Exit full screen',
             lede: 'An AI brain I am building from scratch, in public: from the first lines of Python to a mini-GPT and my own models. Every neuron that lights up is something Brainy has already learned.',
             learned: 'learned', tip: 'Drag to rotate · wheel to zoom', timeline: 'Timeline',
             play: '▶ Replay from 0', live: 'Now', sim: 'Simulate 100%',
@@ -378,7 +378,7 @@
             canvas: '3D brain: each dot is a neuron and lights up when a milestone is completed.',
         },
         es: {
-            back: '← Huerga Labs', by: 'by Huerga Labs',
+            back: '← Huerga Labs', by: 'by Huerga Labs', fs: 'Pantalla completa', fsExit: 'Salir de pantalla completa',
             lede: 'Un cerebro de IA que construyo desde cero, en público: desde las primeras líneas de Python hasta un mini-GPT y mis propios modelos. Cada neurona que se enciende es algo que Brainy ya aprendió.',
             learned: 'aprendido', tip: 'Arrastra para girar · rueda para acercar', timeline: 'Línea temporal',
             play: '▶ Reproducir desde 0', live: 'Ahora', sim: 'Simular 100 %',
@@ -591,6 +591,7 @@
         document.title = t('title');
         document.getElementById('metaDesc')?.setAttribute('content', t('desc'));
         canvas.setAttribute('aria-label', t('canvas'));
+        fsLabel();
         document.querySelectorAll('.lang [data-lang]').forEach((b) => b.setAttribute('aria-pressed', b.dataset.lang === lang ? 'true' : 'false'));
         if (save) { try { localStorage.setItem('lang', lang); } catch (e) { /* sin almacenamiento: no pasa nada */ } }
         renderPanel();
@@ -634,6 +635,53 @@
         renderPanel();
         if (loaded && new URLSearchParams(location.search).get('sim') === '1') simulate(); else repaint();
         drawCurve();
+    }
+
+    // ---------- 11. Pantalla completa ----------
+    // Un navegador NO deja que una página se ponga en pantalla completa sola al abrirse: exige un gesto de la
+    // persona (tocar, hacer clic o pulsar una tecla). Por eso: (a) al primer gesto la página entra sola, una vez;
+    // (b) queda un botón arriba a la derecha para entrar y salir. Si el navegador no tiene esta función
+    // (Safari del iPhone), el botón no aparece y la página sigue llenando la ventana como antes.
+
+    const fsBtn = document.getElementById('brain-fs');
+    const fsEl = document.documentElement;
+    const fsEnter = fsEl.requestFullscreen || fsEl.webkitRequestFullscreen;
+    const fsLeave = document.exitFullscreen || document.webkitExitFullscreen;
+    const fsOn = () => !!(document.fullscreenElement || document.webkitFullscreenElement);
+    const fsStandalone = window.matchMedia('(display-mode: standalone), (display-mode: fullscreen)').matches || navigator.standalone === true;
+
+    function fsLabel() {
+        if (!fsBtn) return;
+        const text = t(fsOn() ? 'fsExit' : 'fs');
+        fsBtn.setAttribute('aria-label', text);
+        fsBtn.title = text;
+        fsBtn.setAttribute('aria-pressed', fsOn() ? 'true' : 'false');
+    }
+    function fsGo() {
+        try {
+            const done = fsEnter.call(fsEl, { navigationUI: 'hide' });
+            if (done && done.catch) done.catch(() => { /* el navegador dijo que no: la página sigue igual */ });
+        } catch (e) { /* sin permiso: no pasa nada */ }
+    }
+    if (fsBtn && fsEnter && fsLeave && !fsStandalone) {
+        fsBtn.hidden = false;
+        fsBtn.addEventListener('click', () => { if (fsOn()) fsLeave.call(document); else fsGo(); });
+        document.addEventListener('fullscreenchange', fsLabel);
+        document.addEventListener('webkitfullscreenchange', fsLabel);
+
+        // Primer gesto: entrar sola, una sola vez (si la persona sale con Esc, no se la vuelve a meter).
+        let fsAuto = true;
+        const first = (e) => {
+            if (!fsAuto) return;
+            if (e.type === 'keydown' && (e.key === 'Escape' || e.key === 'Tab' || e.metaKey || e.ctrlKey || e.altKey)) return;
+            fsAuto = false;
+            document.removeEventListener('pointerup', first, true);
+            document.removeEventListener('keydown', first, true);
+            if (e.target instanceof Element && e.target.closest('a, button')) return;   // enlace o botón: hacen lo suyo
+            if (!fsOn()) fsGo();
+        };
+        document.addEventListener('pointerup', first, true);
+        document.addEventListener('keydown', first, true);
     }
 
     // ---------- Arranque ----------

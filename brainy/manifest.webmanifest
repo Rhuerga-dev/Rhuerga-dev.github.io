@@ -1,0 +1,12 @@
+{
+  "name": "Brainy by Huerga Labs",
+  "short_name": "Brainy",
+  "start_url": "/brainy/",
+  "scope": "/brainy/",
+  "display": "fullscreen",
+  "background_color": "#0a1210",
+  "theme_color": "#0a1210",
+  "icons": [
+    { "src": "/apple-touch-icon.png", "sizes": "180x180", "type": "image/png" }
+  ]
+}

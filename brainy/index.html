@@ -4,6 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#0a1210">
+<!-- Guardada en la pantalla de inicio del teléfono, se abre como una app: sin barras del navegador -->
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Brainy">
+<link rel="manifest" href="manifest.webmanifest">
 <meta id="metaDesc" name="description" content="An AI brain built from scratch, in public. Watch Brainy learn: every neuron that lights up is something it already knows.">
 <title>Brainy by Huerga Labs</title>
 <link rel="canonical" href="https://huergalabs.dev/brainy/">
@@ -53,6 +59,14 @@ a:focus-visible,button:focus-visible,canvas:focus-visible{outline:2px solid var(
 .back{left:var(--l);bottom:var(--b);font:500 13px/1 var(--mono)}
 .back a{color:var(--muted);text-decoration:none}
 .back a:hover{color:var(--accent)}
+.fs{right:var(--r);top:var(--t)}
+.fs button{display:grid;place-items:center;width:44px;height:44px;padding:0;border:1px solid var(--line);border-radius:10px;
+  background:rgba(10,18,16,.6);color:var(--muted);cursor:pointer}
+.fs button:hover{color:var(--accent);border-color:var(--accent)}
+.fs svg{width:20px;height:20px}
+.fs .in{display:none}
+.fs button[aria-pressed="true"] .out{display:none}
+.fs button[aria-pressed="true"] .in{display:block}
 .tip{right:var(--r);bottom:var(--b);font:400 12px/1 var(--mono);color:var(--faint)}
 .msg{left:20px;right:20px;bottom:64px;text-align:center;font:400 15px/1.5 system-ui, sans-serif;color:var(--ink)}
 @media (max-width: 600px){ .tip{display:none} }
@@ -68,12 +82,18 @@ a:focus-visible,button:focus-visible,canvas:focus-visible{outline:2px solid var(
     <small data-i18n="by">by Huerga Labs</small>
     <div class="pct"><b data-brain-pct>0 %</b><span data-i18n="learned">learned</span></div>
   </div>
+  <div class="over fs">
+    <button id="brain-fs" type="button" aria-label="Full screen" aria-pressed="false" hidden>
+      <svg class="out" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg>
+      <svg class="in" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 4v5H4M15 4v5h5M9 20v-5H4M15 20v-5h5"/></svg>
+    </button>
+  </div>
   <div class="over back"><a href="/" data-i18n="back">← Huerga Labs</a></div>
   <div class="over tip" data-i18n="tip">Drag to rotate · wheel to zoom</div>
   <div class="over msg" id="brain-msg" role="status" hidden></div>
 </main>
 
 <noscript><p style="position:fixed;left:20px;right:20px;top:45%;text-align:center;color:#e7efec;font-family:system-ui,sans-serif">Brainy needs JavaScript to draw the brain. / Brainy necesita JavaScript para dibujar el cerebro.</p></noscript>
-<script src="brainy.js?v=2" defer></script>
+<script src="brainy.js?v=3" defer></script>
 </body>
 </html>
