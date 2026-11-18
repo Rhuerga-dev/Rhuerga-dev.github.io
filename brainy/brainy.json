@@ -1,7 +1,7 @@
 {
     "version": 1,
-    "progress": 0.05,
-    "done": 1,
+    "progress": 0.17,
+    "done": 4,
     "total": 20,
     "phases": [
         {
@@ -125,7 +125,7 @@
         {
             "id": 5,
             "name": "Cerebro completo",
-            "progress": 0,
+            "progress": 0.6,
             "milestones": [
                 {
                     "id": "f5_memoria",
@@ -136,20 +136,20 @@
                 {
                     "id": "f5_ollama",
                     "name": "Modelo local con Ollama",
-                    "done": false,
-                    "date": null
+                    "done": true,
+                    "date": "2026-11-17"
                 },
                 {
                     "id": "f5_router",
                     "name": "Router de decisiones",
-                    "done": false,
-                    "date": null
+                    "done": true,
+                    "date": "2026-11-17"
                 },
                 {
                     "id": "f5_claude",
                     "name": "Escalado a Claude",
-                    "done": false,
-                    "date": null
+                    "done": true,
+                    "date": "2026-11-17"
                 },
                 {
                     "id": "f5_mcp",
@@ -170,6 +170,21 @@
             "date": "2026-11-17",
             "milestone": "f3_gpt",
             "progress": 0.05
+        },
+        {
+            "date": "2026-11-17",
+            "milestone": "f5_ollama",
+            "progress": 0.09
+        },
+        {
+            "date": "2026-11-17",
+            "milestone": "f5_router",
+            "progress": 0.13
+        },
+        {
+            "date": "2026-11-17",
+            "milestone": "f5_claude",
+            "progress": 0.17
         }
     ],
     "metrics": {
